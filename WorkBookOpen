@@ -1,0 +1,6 @@
+Private Sub Workbook_Open()
+    Application.OnTime TimeValue("01:00:00"), "'EmailCrewReport """ & "Mid-Shift" & """'"
+    Application.OnTime TimeValue("06:45:00"), "'EmailCrewReport """ & "End-Shift" & """'"
+    Application.OnTime TimeValue("13:00:00"), "'EmailCrewReport """ & "Mid-Shift" & """'"
+    Application.OnTime TimeValue("18:45:00"), "'EmailCrewReport """ & "End-Shift" & """'"
+End Sub
