@@ -1,0 +1,22 @@
+Sub EmailCrewReport(Optional status As String)
+    Dim oApp As Object
+    Dim oMail As Object
+    Dim SendToName As String
+    Dim Subject As String
+    
+    SendToName = "Crew Report"
+    Subject = status
+    
+    Set oApp = CreateObject("Outlook.application")
+    Set oMail = oApp.CreateItem(olMailItem)
+    
+    With oMail
+        
+        .To = SendToName
+        .Subject = Subject
+        .Attachments.Add ActiveWorkbook.FullName
+        .Display
+        
+        
+    End With
+End Sub
